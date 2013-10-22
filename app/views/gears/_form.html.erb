@@ -1,0 +1,21 @@
+<%= form_for @gears do |f| %>
+
+	<li>Equipment name: <%= f.text_field :name %></li>
+	<li>Equipment type: <%= f.text_field :type %></li>
+	<li>Image of Equipment: <%= f.text_field :image %></li>
+	<li>Description: <%= f.area :description, size: "50x10" %></li>
+	<li>Day Rate: <%= f.text_field :dayrate %></li>
+	<li>Week Rate: <%= f.text_field :weekrate %></li>
+
+
+
+
+
+
+    create_table :gears do |t|
+      t.string :name
+      t.string :type
+      t.text :image
+      t.string :dayrate
+      t.string :weekrate
+      t.boolean :availability

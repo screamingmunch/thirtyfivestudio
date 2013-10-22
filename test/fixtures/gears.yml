@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type: 
+  image: MyText
+  dayrate: MyString
+  weekrate: MyString
+  availability: false
+
+two:
+  name: MyString
+  type: 
+  image: MyText
+  dayrate: MyString
+  weekrate: MyString
+  availability: false
