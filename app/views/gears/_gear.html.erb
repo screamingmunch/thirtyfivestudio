@@ -1,0 +1,32 @@
+<div>
+	<h3><%= gear.name %></h3>
+</div>
+
+<div>
+	<h3><%= gear.gear_type %></h3>
+</div>
+
+<div>
+	<h3><%= gear.image %></h3>
+</div>
+
+<div>
+	<h3><%= gear.description %></h3>
+</div>
+
+<div>
+	<h3><%= gear.dayrate %></h3>
+</div>
+
+<div>
+	<h3><%= gear.weekrate %></h3>
+</div>
+
+	
+<% if current_user && current_user.admin  %>
+	<%= link_to "Edit", edit_gear_path(gear) %>
+<% end %>
+
+<% if current_user && current_user.admin  %>
+	<%= link_to "Delete", gear_path(gear), method: :delete %>
+<% end %>

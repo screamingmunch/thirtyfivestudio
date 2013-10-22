@@ -2,6 +2,11 @@
 	margin: 0px;
 	padding: 0px;
 }
+
+html, body{
+	height: 100%
+}
+
 h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: lighter;
@@ -22,4 +27,60 @@ h1 {
 .tagline {
 	font-size: 16px;
 	padding-left: 20px;
+}
+
+
+.wrapper{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
+  padding-top: 30px; /*"margin" above header is instead taken cared of by a padding in the wrapper container */
+  box-sizing: border-box;
+  /*
+  box-sizing has three types: content-box, padding-box, & border-box;
+  */
+}
+
+.push {
+  height: 80px;
+  /*border: 3px solid blue;*/
+  /* use px instead of em's.  em is roughly 16px size of the font used*/
+  /* when u change font size, the height will be messed up.*/
+}
+
+.footer{
+  width: 100%;
+  padding-top: 20px;  /*creates a margin above the footer*/
+  position: relative; /* A relative positioned element is positioned relative to its normal position */
+  /*The content of relatively positioned elements can be moved and overlap other elements, 
+    but the reserved space for the element is still preserved in the normal flow.
+    Relatively positioned elements are often used as container blocks for absolutely positioned elements.
+  */
+  clear: both; /*clears both left & right floated elements so it isn't behind the floated element*/
+  /*
+  By default, floated elements has a height of 0. a container with only floated elements has a height of 0, too.
+  we'll need to use a clearfix hack (Google it) to break out of this.
+  */
+}
+
+
+.footer p {
+  text-align: center;
+  height: 80px;
+  background: #959595;
+  font-size: 14px;
+  line-height: 80px;
+  font-family: sans-serif;
+  color: #FFFFFA;
+  clear:both;
+  
+}
+
+.container_clearfix{
+  position: absolute;
+  overflow: hidden;
+  height: 180px;
+  width: 100%;
+  z-index: -1;
 }

@@ -4,27 +4,66 @@
   <title>RedDevise1</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div class="wrapper">
+
 <!--devise div for sign_in/sign_out-->
 
-	<div id="user_nav">
-		<% if user_signed_in? %>
-			signed in as <%= current_user.email %>.  Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-		<% else %>
-			<%= link_to "Sign up", new_user_registration_path, :method => :get %> ,  <%= link_to "Sign In", new_user_session_path, :method => :post %> or <%= link_to "Continue as Guest", gears_path, :method => :get %>
+	<div id="user_nav" >
 
-		<% end %>
-		<p class="notice"><%= notice %></p>
-  	<p class="alert"><%= alert %></p>
+				<ul class="nav navbar-nav">
+				<% if user_signed_in? %>
+					<li>signed in as <%= current_user.email %></li>
+					<li>  Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+
+
+
+				<% else %>
+					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign up", new_user_registration_path, :method => :get %></button></li>
+					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign In", new_user_session_path, :method => :post %></button></li>
+					<!-- <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Continue as Guest", gears_path, :method => :get %></button></li> -->
+
+				<% end %>
+				</ul>
+
+				<ul class="nav navbar-nav pull right">
+					<li><p class="notice"><%= notice %></p></li>
+			  	<li><p class="alert"><%= alert %></p></li>
+		  	</ul>
+
 
 	</div>
 <!-- end devise div --> 
+<h1>thirty<span class="darkgrey bolder">5tudio</span>
+	<span class="tagline">Camera Operation / 
+		<span class="darkgrey"> RED Cinema & Lens packages</span>
+</h1>
+
+
+<div id="page_nav" class="nav nav-tabs navbar-inverse">
+	<p>
+		<li class="<%=is_active?("/about")%>"><a href="/about"> Info </a></li>
+		<li class="<%=is_active?("/gears")%>"><a href="/gears"> Equipment </a></li>
+		<li class="<%=is_active?("/")%>"><a href="/"> Gallery </a></li>
+		<li class="<%=is_active?("/")%>"><a href="/"> Stuff & Nonesense </a></li>
+		<li class="<%=is_active?("/")%>"><a href="/"> Home </a> </li>
+
+	</p>
+</div>
 
 <%= yield %>
+<div class="push"></div>
+</div>
 
 
 </body>
+	<div class="footer">
+		<p>thrity5tudio &copy;  2013</p>
+	</div>
+
+
 </html>

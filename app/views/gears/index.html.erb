@@ -1,2 +1,14 @@
-<h1>Gears#index</h1>
-<p>Find me in app/views/gears/index.html.erb</p>
+<% if current_user && current_user.admin== true %>
+
+	<%= link_to "Add new gear", new_gear_path %>
+
+<% end %>
+
+
+
+<% @gears.each do |x| %>
+
+	<% render "gear", gear: x %>
+
+<% end %>
+

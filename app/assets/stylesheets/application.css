@@ -8,6 +8,29 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require twitter/bootstrap
  *= require_self
  *= require_tree .
  */
+
+li {
+	list-style: none;
+}
+footer {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.navbar-inverse{
+	background: #959595;
+	border: none;
+
+}
+
+.navbar-inverse a {
+	color: white;
+}
+
+#user_nav {
+	height: 50px;
+
+}
