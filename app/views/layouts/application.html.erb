@@ -17,10 +17,14 @@
 
 				<ul class="nav navbar-nav">
 				<% if user_signed_in? %>
-					<li>signed in as <%= current_user.email %></li>
+
+					<% if current_user.admin == true %>
+						<li>signed in as admin using <%=current_user.email%></li>
+					<% else %>
+						<li>signed in as <%= current_user.email %></li>
+					<% end %>
+
 					<li>  Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-
-
 
 				<% else %>
 					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign up", new_user_registration_path, :method => :get %></button></li>

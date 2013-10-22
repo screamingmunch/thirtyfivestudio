@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  before_create :check_admin
+  before_create :check_admin, :authenticate_user!
 
   private
   def check_admin
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   	else
   		self.admin = false
   	end
-    true
+    true  #before commands cannot have its last return equal to false!
   end
 
 
