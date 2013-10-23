@@ -34,6 +34,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       #admin?
       t.boolean :admin,  :default => false
 
+      #omniauth
+      t.string :provider
+      t.string :uid 
+
       t.timestamps
     end
 

@@ -1,6 +1,10 @@
 class GearsController < ApplicationController
 
+
+  
+
   def index
+ 
     @gears = Gear.all
     render :index
   end

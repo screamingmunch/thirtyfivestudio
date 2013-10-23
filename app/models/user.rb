@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  validates_presence_of :email
+  validates_uniqueness_of :email
   before_create :check_admin
 
 
@@ -14,7 +16,8 @@ class User < ActiveRecord::Base
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.username = auth.info.nickname
+      user.email = (auth.info.nickname + "@twitter.com")
+      user.name = auth.info.nickname
     end
   end
 
