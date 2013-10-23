@@ -29,6 +29,7 @@
 				<% else %>
 					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign up", new_user_registration_path, :method => :get %></button></li>
 					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign In", new_user_session_path, :method => :post %></button></li>
+					<li><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></li>
 					<!-- <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Continue as Guest", gears_path, :method => :get %></button></li> -->
 
 				<% end %>
