@@ -7,8 +7,6 @@ gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'omniauth-facebook'
 
 gem 'omniauth-twitter'
@@ -40,7 +38,13 @@ group :development do
 	gem 'pry-debugger'
 	gem 'better_errors'
 	gem 'quiet_assets'
+  gem 'sqlite3'
 end
+
+group :production do
+  gem 'pg'
+end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
