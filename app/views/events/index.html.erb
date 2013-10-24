@@ -1,0 +1,56 @@
+<!--  old code for simple calendar https://github.com/excid3/simple_calendar#views
+<% if current_user && current_user.admin== true %>
+	<%= link_to "Add new booking", new_event_path %>
+<% end %>
+
+<% @events.each do |x| %>
+	<% render "event", event: x %>
+<% end %>
+
+<div class="calendar">
+<%=	@events.inspect %>
+<%= calendar @events, {:prev_text=>" <<_   ", :next_text=>"   _>>"} do |event| %>
+  <div><%= link_to event.title, event %></div>
+<% end %>
+</div>
+
+-->
+
+<!-- if admin is logged in, show google calendar of bookings -->
+
+<% if current_user && current_user.admin== true %>
+<div class="google_calendar">
+
+	<iframe src="https://www.google.com/calendar/embed?title=Thrity5studio&amp;showPrint=0&amp;showCalendars=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=thirtyfivestudio35%40gmail.com&amp;color=%232F6309&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="400" height="300" frameborder="0" scrolling="no"></iframe>
+
+</div>
+
+<!-- if user is logged in, allow them to submit a inquery request -->
+
+<% elsif current_user %>
+
+   <!-- <%= form_tag "/events/inquiry", method: "post" %> -->
+
+  <form action="/events/inquiry" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  	<li>By: <%= current_user.email %> </li><br>
+  	<li>Full name:<br> <input type="text" name="username"></li><br>
+  	<li>Title:<br> <input type="text" name="inquiry_titile"></li>
+ 		<div class="reservations">
+ 			<br> <input id="reservation" type="radio" name="inquiry_type" value="Reservation Request"> Reservation Request <br>
+  		<input id="general" type="radio" name="inquiry_type" value="General Inquiry"> General Inquiry <br><br>
+ 			<ul class="reserve">
+ 			</ul>
+ 		</div>
+  	<li>Please enter a phone number we can reach you at: <br><input type="text" name="phone_number"></li><br>
+  	<li>Your comment:<br><textarea name="comment" row="8" cols="50"></textarea></li><br>
+  	<li><input type="submit" value="submit"></li>
+  	<br>
+  	<br>
+
+  </form>
+
+<% else %>
+Please <%= link_to "Sign In", new_user_session_path, :method => :post %> to submit a new request.
+
+<% end %>

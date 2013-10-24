@@ -1,0 +1,10 @@
+<%= form_for @event do |f| %>
+
+	<li>Item(s) being rented: <%= f.text_field :title %></li>
+	<li>Rental Begins: <%= f.text_field :start_time %></li>
+	<li>Rental Ends: <%= f.text_field :end_time %></li>
+	<li>Description: <%= f.text_area :description, size: "50x10" %></li>
+	<li><%= f.submit %></li>
+
+	<% end %>
+

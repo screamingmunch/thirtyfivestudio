@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>The user <%= @params[:username] %> has submitted an request to thirtyfivestudio.com</h1>
+
+    <p>    Here is the inquiry submitted: </p>
+
+      <p><%= @params[:username] %></p>
+      <p><%= @params[:inquiry_titile] %></p>
+      <p><%= @params[:inquiry_type] %></p>
+      <p><%= @params[:startdate] %></p>
+      <p><%= @params[:returndate] %></p>
+      <p><strong><%= @params[:phone_number] %></strong></p>
+      <p><%= @params[:comment] %></p>
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Thank you for submitting your request to thirtyfivestudio.com, <%= @params[:username] %></h1>
+
+    <p>    You have submitted the following: </p>
+
+      <p><%= @params[:username] %></p>
+      <p><%= @params[:inquiry_titile] %></p>
+      <p><%= @params[:inquiry_type] %></p>
+      <p><%= @params[:startdate] %></p>
+      <p><%= @params[:returndate] %></p>
+      <p><%= @params[:phone_number] %></p>
+      <p><%= @params[:comment] %></p>
+    <p>Please make sure the phone number submitted is correct.  We will be in touch shortly and have a great day!</p>
+  </body>
+</html>
+
