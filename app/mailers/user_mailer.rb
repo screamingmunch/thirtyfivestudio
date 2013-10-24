@@ -8,9 +8,15 @@ class UserMailer < ActionMailer::Base
   	mail(:to => user.email, :subject => "Welcome to thrityfivestudio")
   end
 
-  def submit_confirmation(user)
+  def form_confirmation(user, params)
+    @user = user
+    @params = params
+    mail(:to => user.email, :subject => "Thank you for submitting your request.")
   end
 
-  def admin_request_submitted(user)
+  def admin_form_confirmation(user, params)
+    @user = user
+    @params = params
+    mail(:to => "thirtyfivestudio35@gmail.com", :subject => "new request")
   end
 end
