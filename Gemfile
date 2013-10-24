@@ -18,9 +18,6 @@ gem 'google-api-client'
 gem 'simple_calendar', '~> 0.1.9'
 gem 'rails-i18n', '~> 3.0.0'
 
-gem 'pry-rails', group: :development
-gem 'pry-debugger', group: :development
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -37,7 +34,13 @@ end
 
 gem 'jquery-rails'
 
-gem 'better_errors', '~> 1.0.1',  :group => :developement
+
+group :development do
+	gem 'pry-rails'
+	gem 'pry-debugger'
+	gem 'better_errors'
+	gem 'quiet_assets'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

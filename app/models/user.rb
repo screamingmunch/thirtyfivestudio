@@ -12,12 +12,12 @@ class User < ActiveRecord::Base
   before_create :check_admin
 
 
-    def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.email = (auth.info.nickname + "@twitter.com")
-      user.name = auth.info.nickname
+  def self.from_omniauth(auth)
+  where(auth.slice(:provider, :uid)).first_or_create do |user|
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.email = (auth.info.nickname + "@twitter.com")
+    user.name = auth.info.nickname
     end
   end
 

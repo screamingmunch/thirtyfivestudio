@@ -131,6 +131,8 @@ GEM
       pry (~> 0.9.10)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -197,7 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors (~> 1.0.1)
+  better_errors
   bootstrap-sass-rails
   coffee-rails (~> 3.2.1)
   devise
@@ -207,6 +209,7 @@ DEPENDENCIES
   omniauth-twitter
   pry-debugger
   pry-rails
+  quiet_assets
   rails (= 3.2.14)
   rails-i18n (~> 3.0.0)
   sass-rails (~> 3.2.3)

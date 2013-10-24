@@ -7,12 +7,8 @@ RedDevise1::Application.routes.draw do
 
   get '/events/thankyou' => 'events#thankyou'
   get '/about' => 'home#about'
-  
+
   resources :gears, :users, :events, :galleries
-
-  
-
-
 
   match 'auth/:provider/callback', to: 'sessions#create'
 	# match 'auth/failure', to: redirect('/')
