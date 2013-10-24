@@ -15,6 +15,9 @@ gem 'omniauth-twitter'
 
 gem 'google-api-client'
 
+gem 'simple_calendar', '~> 0.1.9'
+gem 'rails-i18n', '~> 3.0.0'
+
 gem 'pry-rails', group: :development
 gem 'pry-debugger', group: :development
 

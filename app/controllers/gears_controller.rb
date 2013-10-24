@@ -1,10 +1,7 @@
 class GearsController < ApplicationController
-
-
-  
+  before_filter :is_admin, except: [:index, :show]
 
   def index
- 
     @gears = Gear.all
     render :index
   end
@@ -36,4 +33,13 @@ class GearsController < ApplicationController
     Gear.delete(params[:id])
     redirect_to gears_path
   end
+
+  private
+    def  is_admin
+      if current_user == nil || !current_user.admin  
+         redirect_to :root
+      end
+    end
+    
+
 end

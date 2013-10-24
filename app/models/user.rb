@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
 
   private
   def check_admin
-  	if self.email == "thrityfivestudio35@gmail.com" || self.email == "obertonejeremy@hotmail.com"
+  	if self.email == "thrityfivestudio35@gmail.com" || self.email == "thirty5studio@twitter.com"
   		self.admin = true
   	else
   		self.admin = false
