@@ -4,7 +4,7 @@
   <title>RedDevise1</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-<!--   <%= javascript_include_tag :defaults %> -->
+	<!--<%= javascript_include_tag :defaults %> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,33 +13,32 @@
 
 <!--devise div for sign_in/sign_out-->
 
-	<div id="user_nav" >
+	<div class="user_signin" >
 
-				<ul class="nav navbar-nav">
 				<% if user_signed_in? %>
-
+				<ul class="user_signed_in">
 					<% if current_user.admin == true %>
-						<li>signed in as admin using <%=current_user.email%></li>
+						<li>Signed in as admin using <%=current_user.email%></li>
 					<% else %>
-						<li>signed in as <%= current_user.email %></li>
+						<li>Signed in as <%= current_user.email %></li>
 					<% end %>
 
-					<li>  Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-
-				<% else %>
-					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign up", new_user_registration_path, :method => :get %></button></li>
-					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign In", new_user_session_path, :method => :post %></button></li>
-					<li><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></li>
-					<!-- <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Continue as Guest", gears_path, :method => :get %></button></li> -->
-
-				<% end %>
+					<li>  Not you? &nbsp <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 				</ul>
 
-				<ul class="nav navbar-nav pull right">
+				<% else %>
+				<ul class="breadcrumb">
+					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign up", new_user_registration_path, :method => :get %></button></li>
+					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign In", new_user_session_path, :method => :post %></button></li>
+					<li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></button></li>
+					<!-- <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Continue as Guest", gears_path, :method => :get %></button></li> -->
+				</ul>
+				<% end %>
+
+				<ul class="user_status">
 					<li><p class="notice"><%= notice %></p></li>
 			  	<li><p class="alert"><%= alert %></p></li>
 		  	</ul>
-
 
 	</div>
 <!-- end devise div --> 
@@ -55,7 +54,7 @@
 		<li class="<%=is_active?("/gears")%>"><a href="/gears"> Equipment </a></li>
 		<li class="<%=is_active?("/events")%>"><a href="/events"> Bookings </a> </li>
 		<li class="<%=is_active?("/galleries")%>"><a href="/galleries"> Gallery </a></li>
-		<li class="<%=is_active?("/")%>"><a href="/"> Stuff & Nonesense </a></li>
+		<li class="<%=is_active?("/links")%>"><a href="/links"> Stuff & Nonesense </a></li>
 		<li class="<%=is_active?("/")%>"><a href="/"> Home </a> </li>
 
 	</p>

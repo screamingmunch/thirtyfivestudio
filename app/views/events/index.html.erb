@@ -15,14 +15,16 @@
 </div>
 
 -->
-
+<div class="bookings_container">
 <!-- if admin is logged in, show google calendar of bookings -->
 
 <% if current_user && current_user.admin== true %>
 <div class="google_calendar">
 
 	<iframe src="https://www.google.com/calendar/embed?title=Thrity5studio&amp;showPrint=0&amp;showCalendars=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=thirtyfivestudio35%40gmail.com&amp;color=%232F6309&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="400" height="300" frameborder="0" scrolling="no"></iframe>
-
+  <br>
+  <br>
+  <br>
 </div>
 
 <!-- if user is logged in, allow them to submit a inquery request -->
@@ -54,3 +56,4 @@
 Please <%= link_to "Sign In", new_user_session_path, :method => :post %> to submit a new request.
 
 <% end %>
+</div>

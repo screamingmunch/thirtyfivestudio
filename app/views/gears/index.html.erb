@@ -1,16 +1,22 @@
+<div class="gear_container">
+
 <% if current_user && current_user.admin== true %>
 
 	<%= link_to "Add new gear", new_gear_path %>
+	<br>
+	<br>
 
 <% end %>
 
 
 
-<% @gears.each do |x| %>
+<% @gears.each do |gear| %>
 
-	<% render "gear", gear: x %>
+	<li><a href="/gears/<%= gear.id%>"><%= gear.name %></a></li>
 
 <% end %>
+
+</div>
 
 
 

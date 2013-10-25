@@ -8,8 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self
  */
 
 li {
@@ -29,7 +29,39 @@ footer {
 	color: white;
 }
 
-#user_nav {
-	height: 50px;
+.user_signin {
+	height: 30px;
+	margin: 0;
+}
 
+.user_signed_in {
+	float: right;
+	margin: 10px;
+}
+
+.user_status {
+	float: right;
+	height: 5px;
+}
+
+.breadcrumb {
+	background-color: white;
+}
+
+.breadcrumb > li +
+li:before {
+	content: none;
+}
+
+.alert, .notice {
+	border-color: white;
+	box-shadow: none;
+	float: right;
+	text-shadow: none;
+}
+
+.devise_container {
+	max-width: 400px;
+  width: 50%;
+  margin: 40px 50px 0px 50px;
 }

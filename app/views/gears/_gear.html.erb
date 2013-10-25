@@ -1,26 +1,26 @@
-<div>
+<div class="gear_bold">
 	<h3><%= gear.name %></h3>
 </div>
 
-<div>
-	<h3><%= gear.gear_type %></h3>
+
+<div class="gear_small">
+	<p><%= gear.image %></p>
 </div>
 
-<div>
-	<h3><%= gear.image %></h3>
+<div class="gear_small">
+	<p>Description: <p>
+		<p><%= gear.description %></p>
 </div>
 
-<div>
-	<h3><%= gear.description %></h3>
+<!-- <div class="gear_small">
+	<p><%= gear.dayrate %></p>
 </div>
 
-<div>
-	<h3><%= gear.dayrate %></h3>
-</div>
-
-<div>
-	<h3><%= gear.weekrate %></h3>
-</div>
+<div class="gear_small">
+	<p><%= gear.weekrate %></p>
+</div> -->
+<br>
+<br>
 
 	
 <% if current_user && current_user.admin  %>
