@@ -5,7 +5,7 @@ if Rails.env.development?
 	  :port                 => 587,
 	  :domain               => "localhost:3000",
 	  :user_name            => "thrityfivestudio35",
-	  :password             => "eatmenow",
+	  :password             => "thirtyfiverussia",
 	  :authentication       => "plain",
 	  :enable_starttls_auto => true
 	}
