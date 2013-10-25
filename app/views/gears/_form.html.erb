@@ -1,12 +1,20 @@
 <%= form_for @gear do |f| %>
 
-	<li>Equipment name: <%= f.text_field :name %></li>
-	<li>Equipment type: <%= f.text_field :gear_type %></li>
-	<li>Image of Equipment: <%= f.text_field :image %></li>
-	<li>Description: <%= f.text_area :description, size: "50x10" %></li>
-	<li>Day Rate: <%= f.text_field :dayrate %></li>
-	<li>Week Rate: <%= f.text_field :weekrate %></li>
+	<li>Equipment name: </li>
+	<li><%= f.text_field :name %></li><br>
+	<li>Equipment type: </li>
+	<li><%= f.text_field :gear_type %></li><br>
+	<li>Image of Equipment: </li>
+	<li><%= f.text_field :image %></li><br>
+	<li>Description: </li>
+	<li><%= f.text_area :description, size: "50x10" %></li><br>
+	<li>Day Rate: </li>
+	<li><%= f.text_field :dayrate %></li><br>
+	<li>Week Rate: </li>
+	<li><%= f.text_field :weekrate %></li><br>
 	<li><%= f.submit %></li>
+	<br>
+	<br>
 
 	<% end %>
 
