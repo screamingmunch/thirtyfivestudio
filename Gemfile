@@ -21,7 +21,7 @@ gem 'rails-i18n', '~> 3.0.0'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass-rails'
+  # gem 'bootstrap-sass-rails'
 
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -39,6 +39,7 @@ group :development do
 	gem 'better_errors'
 	gem 'quiet_assets'
   gem 'sqlite3'
+  gem 'letter_opener' #previews your email from ActionMailer
 end
 
 group :production do
