@@ -12,3 +12,98 @@
   width: 50%;
   margin: 40px 50px 0px 50px;
 }
+
+/* From Isotope Example: */
+body {
+    font-family: Arial;
+}
+
+.portfolioFilter a {
+    margin-right: 10px;
+    color:#666;
+    text-decoration:none;
+}
+
+.portfolioFilter a.current {
+    font-weight:bold;
+}
+
+img {
+    margin:5px;
+}
+
+.isotope-item {
+    z-index: 2;
+}
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+/* http://css-tricks.com/perfect-full-page-background-image/ */
+/*        html {
+            background: url() no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        img{
+                float: left;
+                margin-right: 10px;
+            max-width: 50%;
+            max-height: 50%;
+
+        }
+
+        body {
+                width: 728px;
+                margin-left: auto;
+                margin-right: auto;
+            padding-top: 20px;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            background: transparent;
+        }
+
+        h1 {
+
+           font-family: 'Lato', sans-serif;
+           font-weight: 700;
+            font-size: 40px;
+        }
+        img{
+            border: 3px solid black;
+        }
+*/
+        /* Override B3 .panel adding a subtly transparent background */
+/*        .panel {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .margin-base-vertical {
+            margin: 40px 0;
+        }
+        .line{
+            background-color: black;
+            height:3px;
+        }
+*/

@@ -17,7 +17,6 @@
 
 $(document).ready(function(){
 
-	//begin todo list
 
 
 	var $newListItem = $('<div id="dates">'+
@@ -52,5 +51,5 @@ $('#reservation').on('click', addDate)
 $('#general').on('click', hideDate)
 
 
-//end of document.ready	
+//end of document.ready
 });
